@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark text-white">
+            <a class="navbar-brand">
+                Aci Sports Store
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 p-2">
+            <button class="btn btn-block btn-outline-primary" (click)="changeDept()">HOME</button>
+            <button *ngFor="let cat of departments" class="btn btn-block btn-outline-primary"
+                [class.active]="cat==selectdep" (click)="changeDept(cat)">{{cat}}
+            </button>
+        </div>
+
+        <div class="col-9 p-2 text-black bg-info">
+            <div *ngFor="let p of students" class="card m-3 p-1 bg-light text-black">
+                <h4>
+                    {{p.name}}<span class="badge badge-pill bg-dark float-right badge-primary">
+
+                        {{p.address | uppercase}}</span>
+
+                </h4>
+                <div class="card-text bg-white">{{"ID = "+p.id}}</div>
+            </div>
+        </div>
+        
+    </div>
+</div>
